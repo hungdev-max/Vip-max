@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hùng | VIP INFORMATION </title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:radial-gradient(circle at top,#0f2027,#000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* INTRO */
+.intro{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    letter-spacing:3px;
+    animation:intro 2.5s forwards;
+    z-index:10;
+}
+
+@keyframes intro{
+    0%{opacity:1}
+    80%{opacity:1}
+    100%{opacity:0;visibility:hidden}
+}
+
+/* CARD */
+.card{
+    width:350px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border-radius:22px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,255,255,0.4);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:4px solid #00f2ff;
+    object-fit:cover;
+    box-shadow:0 0 25px #00f2ff;
+}
+
+h2{
+    margin-top:15px;
+    font-size:24px;
+}
+
+.role{
+    margin-top:6px;
+    font-size:14px;
+    opacity:0.85;
+}
+
+.line{
+    width:70%;
+    height:2px;
+    margin:16px auto;
+    background:linear-gradient(to right,transparent,#00f2ff,transparent);
+}
+
+/* BUTTONS */
+.links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.links a{
+    text-decoration:none;
+    color:white;
+    padding:14px;
+    border-radius:35px;
+    font-size:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    transition:0.35s;
+}
+
+.fb{background:#1877f2;}
+.tt{background:#000;}
+.zl{background:#00bfff;}
+
+.links a:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 18px rgba(255,255,255,0.6);
+}
+
+/* MUSIC BUTTON */
+.music{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:22px;
+    cursor:pointer;
+    opacity:0.8;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:18px;
+    font-size:12px;
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro">WELCOME 👑</div>
+
+<!-- NHẠC (tắt/mở) -->
+<audio id="bgm" loop>
+    <source src="nhacvip.mp3" type="audio/mpeg">
+</audio>
+<div class="music" onclick="toggleMusic()">
+    <i class="fas fa-music"></i>
+</div>
+
+<div class="card">
+
+    <!-- 🔴 (1) ẢNH -->
+    <img src="d718bba37a543596f271fa1dafdd3001.jpg" class="avatar">
+
+    <!-- 🔴 (2) TÊN -->
+    <h2>Đào Phi Hùng</h2>
+
+    <!-- 🔴 (3) MÔ TẢ -->
+    <div class="role">Học sinh:))
+Lưu ý bấm nút nhạc góc phải mànhình để bật nhạc (chờ cỡ 2-3 giây)</div>
+
+    <div class="line"></div>
+
+    <!-- 🔴 (4) LINK -->
+    <div class="links">
+
+        <!-- FACEBOOK -->
+        <a class="fb" href="https://www.facebook.com/share/1C3njrLSk9/" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+
+        <!-- TIKTOK -->
+        <a class="tt" href="https://www.tiktok.com/@phi.hung.love.you?_r=1&_t=ZS-93G1hsSwjKB" target="_blank">
+            <i class="fab fa-tiktok"></i> TikTok
+        </a>
+
+        <!-- ZALO -->
+        <a class="zl" href="https://zalo.me/84962969042" target="_blank">
+            <i class="fas fa-comment-dots"></i> Zalo
+        </a>
+
+    </div>
+
+    <div class="footer">© Made by Hùng|  🔥</div>
+
+</div>
+
+<script>
+let playing=false;
+function toggleMusic(){
+    const music=document.getElementById("bgm");
+    if(!playing){
+        music.play();
+        playing=true;
+    }else{
+        music.pause();
+        playing=false;
+    }
+}
+</script>
+
+</body>
+</html>
